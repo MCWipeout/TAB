@@ -266,7 +266,7 @@ public abstract class NameTagX extends NameTag implements UnlimitedNameTagManage
     public void pauseTeamHandling(@NonNull me.neznamy.tab.api.TabPlayer player) {
         Preconditions.checkLoaded(player);
         if (teamHandlingPaused.contains(player)) return;
-        if (!getDisableChecker().isDisabledPlayer((TabPlayer) player)) unregisterTeam((TabPlayer) player, getSorting().getShortTeamName((TabPlayer) player));
+        //if (!getDisableChecker().isDisabledPlayer((TabPlayer) player)) unregisterTeam((TabPlayer) player, getSorting().getShortTeamName((TabPlayer) player));
         teamHandlingPaused.add(player); //adding after, so unregisterTeam method runs
         pauseArmorStands((TabPlayer) player);
     }
@@ -276,7 +276,7 @@ public abstract class NameTagX extends NameTag implements UnlimitedNameTagManage
         Preconditions.checkLoaded(player);
         if (!teamHandlingPaused.contains(player)) return;
         teamHandlingPaused.remove(player); //removing before, so registerTeam method runs
-        if (!getDisableChecker().isDisabledPlayer((TabPlayer) player)) registerTeam((TabPlayer) player);
+        //if (!getDisableChecker().isDisabledPlayer((TabPlayer) player)) registerTeam((TabPlayer) player);
         resumeArmorStands((TabPlayer) player);
     }
 
